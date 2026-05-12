@@ -1,5 +1,5 @@
-# CurrÌculo - Talyson Costa Marques da Silva
+# Curr√≠culo - Talyson Costa Marques da Silva
 
-?? **Acesse o currÌculo online:** [sandymarques.github.io/curriculo](https://sandymarques.github.io/curriculo/)
+**Acesse o curr√≠culo online:** [sandymarques.github.io/curriculo](https://sandymarques.github.io/curriculo/)
 
-Desenvolvedor de Software focado em Python, IA, vis„o computacional e automaÁ„o.
+Desenvolvedor de Software focado em Python, IA, vis√£o computacional e automa√ß√£o.
