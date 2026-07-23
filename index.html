@@ -5,18 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Talyson Costa Marques da Silva</title>
     
+    <!-- Evita FOUC (Flash of Unstyled Content) do tema -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-slate-50 font-sans text-slate-600 leading-relaxed min-h-screen py-8 px-4 sm:px-6 lg:px-8">
 
-    <div class="max-w-4xl mx-auto bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+    <style>
+        @media print {
+            #theme-toggle { display: none !important; }
+            body { background-color: white !important; color: black !important; padding: 0 !important; }
+            .max-w-4xl { max-width: 100% !important; border: none !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 font-sans text-slate-600 dark:text-slate-300 leading-relaxed min-h-screen py-8 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+
+    <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 shadow-sm dark:shadow-2xl border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden transition-colors duration-300 relative">
         
+        <!-- Botão de Alternância de Tema (Dark Mode Toggle) -->
+        <button id="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema" class="absolute top-6 right-6 md:top-8 md:right-8 p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all flex items-center justify-center group z-10">
+            <i data-lucide="sun" id="theme-toggle-light-icon" class="w-5 h-5 hidden text-amber-400 group-hover:rotate-45 transition-transform"></i>
+            <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-5 h-5 hidden text-slate-200 group-hover:-rotate-12 transition-transform"></i>
+        </button>
+
         <!-- Cabeçalho -->
-        <header class="bg-slate-900 text-white p-8 md:p-10">
+        <header class="bg-slate-900 dark:bg-slate-950 text-white p-8 md:p-10 border-b border-transparent dark:border-slate-800 pr-16 md:pr-20">
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 Talyson Costa Marques da Silva
             </h1>
@@ -53,109 +81,109 @@
             
             <!-- Objetivo Profissional -->
             <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-2 mb-4">
-                    <i data-lucide="user" stroke-width="1.5" class="w-6 h-6 text-slate-700"></i>
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Objetivo Profissional</h2>
+                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="user" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Objetivo Profissional</h2>
                 </div>
-                <p class="text-slate-700">Desenvolvedor focado em Python, integração de Inteligência Artificial, visão computacional e desenvolvimento de arquiteturas escaláveis. Busco atuar na otimização de processos e criação de soluções de software de alto impacto técnico.</p>
+                <p class="text-slate-700 dark:text-slate-300">Desenvolvedor focado em Python, integração de Inteligência Artificial, visão computacional e desenvolvimento de arquiteturas escaláveis. Busco atuar na otimização de processos e criação de soluções de software de alto impacto técnico.</p>
             </section>
 
             <!-- Competências Técnicas -->
             <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-2 mb-4">
-                    <i data-lucide="code-2" stroke-width="1.5" class="w-6 h-6 text-slate-700"></i>
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Competências Técnicas</h2>
+                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="code-2" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Competências Técnicas</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 font-semibold">
-                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600"></i>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
+                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
                             <h3>Linguagens</h3>
                         </div>
-                        <p class="text-sm text-slate-600">Python (Avançado)</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Python (Avançado)</p>
                     </div>
                     
-                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 font-semibold">
-                            <i data-lucide="cpu" class="w-4 h-4 text-blue-600"></i>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
+                            <i data-lucide="cpu" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
                             <h3>IA & Visão Computacional</h3>
                         </div>
-                        <p class="text-sm text-slate-600">Modelos MediaPipe (rastreamento biométrico em tempo real), Integração de APIs de IA</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Modelos MediaPipe (rastreamento biométrico em tempo real), Integração de APIs de IA</p>
                     </div>
 
-                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 font-semibold">
-                            <i data-lucide="code-2" class="w-4 h-4 text-blue-600"></i>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
+                            <i data-lucide="code-2" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
                             <h3>Desenvolvimento & UI</h3>
                         </div>
-                        <p class="text-sm text-slate-600">Arquitetura de interfaces, animações web avançadas com GSAP</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Arquitetura de interfaces, animações web avançadas com GSAP</p>
                     </div>
 
-                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 font-semibold">
-                            <i data-lucide="database" class="w-4 h-4 text-blue-600"></i>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
+                            <i data-lucide="database" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
                             <h3>DevOps & Infraestrutura</h3>
                         </div>
-                        <p class="text-sm text-slate-600">Containerização (Docker), Arquitetura de Redes de Computadores, Linux</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Containerização (Docker), Arquitetura de Redes de Computadores, Linux</p>
                     </div>
 
-                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100 md:col-span-2">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 font-semibold">
-                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600"></i>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800 md:col-span-2">
+                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
+                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
                             <h3>Dados & Automação</h3>
                         </div>
-                        <p class="text-sm text-slate-600">Rotinas de automação, manipulação avançada de dados em planilhas e sistemas corporativos</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Rotinas de automação, manipulação avançada de dados em planilhas e sistemas corporativos</p>
                     </div>
                 </div>
             </section>
 
             <!-- Projetos Relevantes -->
             <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-2 mb-4">
-                    <i data-lucide="terminal" stroke-width="1.5" class="w-6 h-6 text-slate-700"></i>
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Projetos Relevantes</h2>
+                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="terminal" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Projetos Relevantes</h2>
                 </div>
                 <div class="space-y-6">
-                    <div class="relative pl-4 border-l-2 border-blue-200">
+                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800">Pomodoro Biométrico</h3>
-                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded">2023 - Atual</span>
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Pomodoro Biométrico</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
                         </div>
-                        <p class="text-slate-700 text-sm mt-2">Desenvolvimento de aplicação utilizando visão computacional e a biblioteca MediaPipe para rastreamento biométrico em tempo real, automatizando o controle de foco e produtividade do usuário.</p>
+                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Desenvolvimento de aplicação utilizando visão computacional e a biblioteca MediaPipe para rastreamento biométrico em tempo real, automatizando o controle de foco e produtividade do usuário.</p>
                     </div>
 
-                    <div class="relative pl-4 border-l-2 border-blue-200">
+                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800">NIVRA</h3>
-                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded">2023 - Atual</span>
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">NIVRA</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
                         </div>
-                        <p class="text-slate-700 text-sm mt-2">Construção de arquitetura de UI com integração avançada de animações utilizando GSAP, focando em performance de renderização e experiência do usuário.</p>
+                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Construção de arquitetura de UI com integração avançada de animações utilizando GSAP, focando em performance de renderização e experiência do usuário.</p>
                     </div>
 
-                    <div class="relative pl-4 border-l-2 border-blue-200">
+                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800">Automação de Infraestrutura e Bots</h3>
-                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded">2023 - Atual</span>
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Automação de Infraestrutura e Bots</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
                         </div>
-                        <p class="text-slate-700 text-sm mt-2">Criação de bots para automação de tarefas operacionais no Discord e orquestração de ambientes isolados utilizando Docker.</p>
+                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Criação de bots para automação de tarefas operacionais no Discord e orquestração de ambientes isolados utilizando Docker.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Experiência Profissional -->
             <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-2 mb-4">
-                    <i data-lucide="briefcase" stroke-width="1.5" class="w-6 h-6 text-slate-700"></i>
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Experiência Profissional</h2>
+                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="briefcase" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Experiência Profissional</h2>
                 </div>
                 <div class="space-y-8">
                     <div>
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800">Analista Administrativo / Foco em Automação de Processos</h3>
-                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded mt-2 sm:mt-0">Novembro 2020 – Atual</span>
+                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Analista Administrativo / Foco em Automação de Processos</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50 mt-2 sm:mt-0">Novembro 2020 – Atual</span>
                         </div>
-                        <p class="text-blue-600 font-medium mb-3">ACCENTURE BRASIL - PROJETO VIVERE</p>
-                        <ul class="list-disc list-inside space-y-1 text-slate-700 text-sm">
+                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">ACCENTURE BRASIL - PROJETO VIVERE</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 text-sm">
                             <li class="leading-relaxed">Desenvolvimento e implementação de soluções tecnológicas e lógicas de automação em planilhas para ganho de escala em operações diárias.</li>
                             <li class="leading-relaxed">Análise técnica de documentos e modelagem de dados para otimização de fluxos de trabalho do projeto.</li>
                             <li class="leading-relaxed">Resolução de problemas sistêmicos e gerenciamento de tarefas estruturadas sob métricas rígidas de eficiência.</li>
@@ -166,27 +194,27 @@
 
             <!-- Formação Acadêmica & Cursos -->
             <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-2 mb-4">
-                    <i data-lucide="graduation-cap" stroke-width="1.5" class="w-6 h-6 text-slate-700"></i>
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Formação Acadêmica & Cursos</h2>
+                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="graduation-cap" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
+                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Formação Acadêmica & Cursos</h2>
                 </div>
                 <div class="space-y-6">
                     <div>
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-md font-bold text-slate-800">Tecnologia em Redes de Computadores</h3>
-                            <span class="text-sm text-slate-500 font-medium">Agosto 2019 – Julho 2022</span>
+                            <h3 class="text-md font-bold text-slate-800 dark:text-slate-100">Tecnologia em Redes de Computadores</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">Agosto 2019 – Julho 2022</span>
                         </div>
-                        <p class="text-slate-600 font-medium text-sm">SENAC-SP</p>
-                        <p class="text-slate-600 text-sm mt-1">Foco em arquitetura de infraestrutura de TI, implantação de redes, gerenciamento de sistemas operacionais e protocolos de comunicação.</p>
+                        <p class="text-slate-600 dark:text-slate-400 font-medium text-sm">SENAC-SP</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Foco em arquitetura de infraestrutura de TI, implantação de redes, gerenciamento de sistemas operacionais e protocolos de comunicação.</p>
                     </div>
 
                     <div>
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-md font-bold text-slate-800">Excel Avançado e Análise de Dados</h3>
-                            <span class="text-sm text-slate-500 font-medium">Curso Complementar</span>
+                            <h3 class="text-md font-bold text-slate-800 dark:text-slate-100">Excel Avançado e Análise de Dados</h3>
+                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">Curso Complementar</span>
                         </div>
-                        <p class="text-slate-600 font-medium text-sm">SENAI-SP</p>
-                        <p class="text-slate-600 text-sm mt-1">Foco em modelagem lógica e automação de planilhas.</p>
+                        <p class="text-slate-600 dark:text-slate-400 font-medium text-sm">SENAI-SP</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Foco em modelagem lógica e automação de planilhas.</p>
                     </div>
                 </div>
             </section>
@@ -194,9 +222,36 @@
         </div>
     </div>
 
-    <!-- Inicialização dos ícones Lucide -->
+    <!-- Script para controle do Dark Mode e ícones Lucide -->
     <script>
         lucide.createIcons();
+
+        const toggleBtn = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
+            }
+        }
+
+        updateIcons();
+
+        toggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateIcons();
+        });
     </script>
 </body>
 </html>
