@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Talyson Costa Marques da Silva</title>
+    <meta name="description" content="Currículo de Talyson Costa Marques da Silva - Redes de Computadores, Automação em Python, IA e Infraestrutura de TI.">
     
     <!-- Evita FOUC (Flash of Unstyled Content) do tema -->
     <script>
@@ -14,11 +15,23 @@
         }
     </script>
 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
     </script>
     
@@ -27,208 +40,326 @@
 
     <style>
         @media print {
-            #theme-toggle { display: none !important; }
-            body { background-color: white !important; color: black !important; padding: 0 !important; }
-            .max-w-4xl { max-width: 100% !important; border: none !important; box-shadow: none !important; }
+            .no-print { display: none !important; }
+            body { 
+                background-color: white !important; 
+                color: #111827 !important; 
+                padding: 0 !important; 
+                font-size: 11pt !important;
+            }
+            .max-w-4xl { 
+                max-width: 100% !important; 
+                border: none !important; 
+                box-shadow: none !important; 
+                border-radius: 0 !important;
+            }
+            header {
+                background-color: #0f172a !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-break-inside-avoid {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 font-sans text-slate-600 dark:text-slate-300 leading-relaxed min-h-screen py-8 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+<body class="bg-slate-100 dark:bg-slate-950 font-sans text-slate-700 dark:text-slate-300 leading-relaxed min-h-screen py-6 sm:py-10 px-3 sm:px-6 lg:px-8 transition-colors duration-300 antialiased">
 
-    <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 shadow-sm dark:shadow-2xl border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden transition-colors duration-300 relative">
+    <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 shadow-xl border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors duration-300 relative">
         
-        <!-- Botão de Alternância de Tema (Dark Mode Toggle) -->
-        <button id="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema" class="absolute top-6 right-6 md:top-8 md:right-8 p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all flex items-center justify-center group z-10">
-            <i data-lucide="sun" id="theme-toggle-light-icon" class="w-5 h-5 hidden text-amber-400 group-hover:rotate-45 transition-transform"></i>
-            <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-5 h-5 hidden text-slate-200 group-hover:-rotate-12 transition-transform"></i>
-        </button>
+        <!-- Ações do Topo (Tema e Impressão) -->
+        <div class="no-print absolute top-6 right-6 flex items-center gap-2 z-20">
+            <button id="print-btn" type="button" title="Imprimir / Salvar em PDF" aria-label="Imprimir Currículo" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all flex items-center gap-2 text-xs font-medium cursor-pointer">
+                <i data-lucide="printer" class="w-4 h-4 text-blue-400"></i>
+                <span class="hidden sm:inline">Imprimir / PDF</span>
+            </button>
+            <button id="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all flex items-center justify-center group cursor-pointer">
+                <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4 hidden text-amber-400 group-hover:rotate-45 transition-transform"></i>
+                <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-4 h-4 hidden text-slate-200 group-hover:-rotate-12 transition-transform"></i>
+            </button>
+        </div>
 
         <!-- Cabeçalho -->
-        <header class="bg-slate-900 dark:bg-slate-950 text-white p-8 md:p-10 border-b border-transparent dark:border-slate-800 pr-16 md:pr-20">
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">
-                Talyson Costa Marques da Silva
+        <header class="bg-slate-900 dark:bg-slate-950 text-white p-6 sm:p-10 border-b border-transparent dark:border-slate-800 pr-24 sm:pr-40">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-white">
+                TALYSON COSTA MARQUES DA SILVA
             </h1>
-            <p class="text-lg md:text-xl text-blue-400 font-medium mb-6">
-                Desenvolvedor de Software / Automação
+            <p class="text-sm sm:text-base text-blue-400 font-medium mb-4 flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
+                <span>Praia Grande - SP &bull; Disponível para Remoto / Híbrido / Presencial</span>
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-300">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300 pt-2 border-t border-slate-800">
                 <div class="flex items-center gap-2">
-                    <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
-                    <a href="mailto:talyson14marques@hotmail.com" class="hover:text-white transition-colors">talyson14marques@hotmail.com</a>
+                    <i data-lucide="phone" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                    <a href="tel:+5511982378928" class="hover:text-blue-300 transition-colors">(11) 98237-8928</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i data-lucide="phone" class="w-4 h-4 text-blue-400"></i>
-                    <a href="tel:+5511982378928" class="hover:text-white transition-colors">(11) 98237-8928</a>
+                    <i data-lucide="mail" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                    <a href="mailto:talyson14marques@hotmail.com" class="hover:text-blue-300 transition-colors">talyson14marques@hotmail.com</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i>
-                    <span>Praia Grande - SP (Disponível Home Office)</span>
+                    <i data-lucide="linkedin" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                    <a href="https://linkedin.com/in/talysonmarques" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition-colors">linkedin.com/in/talysonmarques</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
-                    <a href="https://linkedin.com/in/talysonmarques" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">talysonmarques</a>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="github" class="w-4 h-4 text-blue-400"></i>
-                    <a href="https://github.com/SandyMarques" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">SandyMarques</a>
+                    <i data-lucide="github" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                    <a href="https://github.com/SandyMarques" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition-colors">github.com/SandyMarques</a>
                 </div>
             </div>
         </header>
 
         <!-- Conteúdo Principal -->
-        <div class="p-8 md:p-10 space-y-10">
+        <div class="p-6 sm:p-10 space-y-8">
             
             <!-- Objetivo Profissional -->
-            <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
-                    <i data-lucide="user" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
-                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Objetivo Profissional</h2>
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-3">
+                    <i data-lucide="target" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Objetivo Profissional</h2>
                 </div>
-                <p class="text-slate-700 dark:text-slate-300">Desenvolvedor focado em Python, integração de Inteligência Artificial, visão computacional e desenvolvimento de arquiteturas escaláveis. Busco atuar na otimização de processos e criação de soluções de software de alto impacto técnico.</p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed text-justify sm:text-left">
+                    Atuação nas áreas de TI, Suporte Técnico, Infraestrutura de Redes e Processos Administrativos, aplicando conhecimentos em Linux, Redes de Computadores, automação de processos com Python e Inteligência Artificial para ganho de eficiência e produtividade.
+                </p>
+            </section>
+
+            <!-- Resumo Profissional -->
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-3">
+                    <i data-lucide="user-check" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Resumo Profissional</h2>
+                </div>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed text-justify sm:text-left">
+                    Profissional graduado em Tecnologia em Redes de Computadores pelo SENAC-SP, com sólida experiência corporativa na Accenture Brasil em otimização de fluxos operacionais, análise de dados e resolução de incidentes sistêmicos. Experiência prática na criação de ferramentas e rotinas de automação utilizando Python e soluções de Inteligência Artificial aplicadas ao dia a dia de trabalho. Conhecimento em administração de ambientes Linux, arquitetura e segurança de redes, montagem/manutenção de microcomputadores e containerização com Docker. Perfil analítico, focado em aprendizado contínuo, inovação tecnológica e excelência no cumprimento de métricas de qualidade (SLA).
+                </p>
             </section>
 
             <!-- Competências Técnicas -->
-            <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
-                    <i data-lucide="code-2" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
-                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Competências Técnicas</h2>
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="cpu" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Competências Técnicas</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
-                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <h3>Linguagens</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-1.5 text-slate-900 dark:text-slate-100 font-semibold text-sm">
+                            <i data-lucide="server" class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0"></i>
+                            <h3>Sistemas Operacionais & Infraestrutura</h3>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Python (Avançado)</p>
-                    </div>
-                    
-                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
-                            <i data-lucide="cpu" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <h3>IA & Visão Computacional</h3>
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Modelos MediaPipe (rastreamento biométrico em tempo real), Integração de APIs de IA</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Linux (instalação, linha de comando, rotinas de administração), Windows, Arquitetura de Redes (protocolos TCP/IP, endereçamento, segurança de redes), Suporte e Manutenção de Hardware.
+                        </p>
                     </div>
 
-                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
-                            <i data-lucide="code-2" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <h3>Desenvolvimento & UI</h3>
+                    <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-1.5 text-slate-900 dark:text-slate-100 font-semibold text-sm">
+                            <i data-lucide="bot" class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0"></i>
+                            <h3>Automação & Inteligência Artificial</h3>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Arquitetura de interfaces, animações web avançadas com GSAP</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Desenvolvimento de scripts em Python para automação de tarefas, integração com APIs de IA, uso de ferramentas de IA generativa para aumento de produtividade diária, Docker (containerização).
+                        </p>
                     </div>
 
-                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
-                            <i data-lucide="database" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <h3>DevOps & Infraestrutura</h3>
+                    <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-1.5 text-slate-900 dark:text-slate-100 font-semibold text-sm">
+                            <i data-lucide="table" class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0"></i>
+                            <h3>Análise de Dados & Produtividade</h3>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Containerização (Docker), Arquitetura de Redes de Computadores, Linux</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Excel Avançado (modelagem lógica, automação de planilhas, fórmulas complexas), análise e validação de documentos corporativos, gestão e cumprimento de SLAs.
+                        </p>
                     </div>
 
-                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-md border border-slate-100 dark:border-slate-800 md:col-span-2">
-                        <div class="flex items-center gap-2 mb-2 text-slate-800 dark:text-slate-100 font-semibold">
-                            <i data-lucide="terminal" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <h3>Dados & Automação</h3>
+                    <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-1.5 text-slate-900 dark:text-slate-100 font-semibold text-sm">
+                            <i data-lucide="code-2" class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0"></i>
+                            <h3>Desenvolvimento & Web</h3>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Rotinas de automação, manipulação avançada de dados em planilhas e sistemas corporativos</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projetos Relevantes -->
-            <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
-                    <i data-lucide="terminal" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
-                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Projetos Relevantes</h2>
-                </div>
-                <div class="space-y-6">
-                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Pomodoro Biométrico</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Desenvolvimento de aplicação utilizando visão computacional e a biblioteca MediaPipe para rastreamento biométrico em tempo real, automatizando o controle de foco e produtividade do usuário.</p>
-                    </div>
-
-                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">NIVRA</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Construção de arquitetura de UI com integração avançada de animações utilizando GSAP, focando em performance de renderização e experiência do usuário.</p>
-                    </div>
-
-                    <div class="relative pl-4 border-l-2 border-blue-200 dark:border-blue-500/40">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Automação de Infraestrutura e Bots</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50">2023 - Atual</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm mt-2">Criação de bots para automação de tarefas operacionais no Discord e orquestração de ambientes isolados utilizando Docker.</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            JavaScript, HTML5, CSS3, Git / GitHub, Supabase, Vercel.
+                        </p>
                     </div>
                 </div>
             </section>
 
             <!-- Experiência Profissional -->
-            <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
-                    <i data-lucide="briefcase" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
-                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Experiência Profissional</h2>
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Experiência Profissional</h2>
                 </div>
-                <div class="space-y-8">
-                    <div>
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">Analista Administrativo / Foco em Automação de Processos</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-transparent dark:border-slate-700/50 mt-2 sm:mt-0">Novembro 2020 – Atual</span>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/50 dark:bg-slate-800/20 p-4 rounded-lg border border-slate-200/60 dark:border-slate-800">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1 gap-1">
+                            <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">
+                                ACCENTURE BRASIL <span class="font-normal text-slate-500 dark:text-slate-400">— Projeto Vivere</span>
+                            </h3>
+                            <span class="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2.5 py-0.5 rounded border border-blue-200 dark:border-blue-800/50 self-start sm:self-auto">
+                                Novembro 2020 – Atual
+                            </span>
                         </div>
-                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-3">ACCENTURE BRASIL - PROJETO VIVERE</p>
-                        <ul class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 text-sm">
-                            <li class="leading-relaxed">Desenvolvimento e implementação de soluções tecnológicas e lógicas de automação em planilhas para ganho de escala em operações diárias.</li>
-                            <li class="leading-relaxed">Análise técnica de documentos e modelagem de dados para otimização de fluxos de trabalho do projeto.</li>
-                            <li class="leading-relaxed">Resolução de problemas sistêmicos e gerenciamento de tarefas estruturadas sob métricas rígidas de eficiência.</li>
+                        <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-3">
+                            Analista Administrativo | Foco em Automação & Processos
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 mt-1 font-bold">&bull;</span>
+                                <span>Desenvolvimento e implementação de rotinas de automação em Python e planilhas avançadas para ganho de escala e redução de esforço manual em operações repetitivas.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 mt-1 font-bold">&bull;</span>
+                                <span>Aplicação de ferramentas de Inteligência Artificial no fluxo de trabalho diário para aceleração na análise técnica de documentos e estruturação de dados.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 mt-1 font-bold">&bull;</span>
+                                <span>Diagnóstico, triagem e resolução de inconsistências sistêmicas, assegurando o cumprimento rigoroso de métricas de SLA, qualidade e produtividade.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 mt-1 font-bold">&bull;</span>
+                                <span>Apoio na modelagem lógica e padronização de dados corporativos para otimização contínua dos fluxos operacionais do projeto.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Formação Acadêmica & Cursos -->
-            <section>
-                <div class="flex items-center gap-2 border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">
-                    <i data-lucide="graduation-cap" stroke-width="1.5" class="w-6 h-6 text-slate-700 dark:text-blue-400"></i>
-                    <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">Formação Acadêmica & Cursos</h2>
+            <!-- Projetos Práticos & Automações -->
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="folder-git-2" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Projetos Práticos & Automações</h2>
                 </div>
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-md font-bold text-slate-800 dark:text-slate-100">Tecnologia em Redes de Computadores</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">Agosto 2019 – Julho 2022</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
+                                Ferramentas de Automação & Produtividade com IA
+                            </h3>
+                            <span class="inline-block text-[11px] font-medium text-blue-600 dark:text-blue-400 mb-2">Python &bull; APIs de IA &bull; Scripts Utilitários</span>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Criação de scripts e utilitários com integração a APIs de IA para automação de tarefas cotidianas, extração de informações e otimização de tempo operacional.
+                            </p>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-400 font-medium text-sm">SENAC-SP</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Foco em arquitetura de infraestrutura de TI, implantação de redes, gerenciamento de sistemas operacionais e protocolos de comunicação.</p>
                     </div>
 
-                    <div>
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                            <h3 class="text-md font-bold text-slate-800 dark:text-slate-100">Excel Avançado e Análise de Dados</h3>
-                            <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">Curso Complementar</span>
+                    <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
+                                Pomodoro Biométrico
+                            </h3>
+                            <span class="inline-block text-[11px] font-medium text-blue-600 dark:text-blue-400 mb-2">Python &bull; MediaPipe &bull; Visão Computacional</span>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Aplicação para gerenciamento de foco e produtividade com rastreamento biométrico em tempo real.
+                            </p>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-400 font-medium text-sm">SENAI-SP</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Foco em modelagem lógica e automação de planilhas.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
+                                Automação de Infraestrutura & Bots
+                            </h3>
+                            <span class="inline-block text-[11px] font-medium text-blue-600 dark:text-blue-400 mb-2">Python &bull; Docker &bull; Discord API &bull; Linux</span>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Desenvolvimento de bots para automação de rotinas operacionais e orquestração de ambientes isolados em contêineres Docker sob Linux.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
+                                NIVRA
+                            </h3>
+                            <span class="inline-block text-[11px] font-medium text-blue-600 dark:text-blue-400 mb-2">JavaScript &bull; GSAP &bull; Web UI</span>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Construção de interface web focada em alta performance de renderização e responsividade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formação Acadêmica & Certificações -->
+            <section class="print-break-inside-avoid">
+                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 mb-4">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Formação Acadêmica & Certificações</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/60 dark:bg-slate-800/20 p-4 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1 gap-1">
+                            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">
+                                Graduação Tecnológica em Redes de Computadores
+                            </h3>
+                            <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                                Ago 2019 – Jul 2022
+                            </span>
+                        </div>
+                        <p class="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2.5">
+                            SENAC-SP
+                        </p>
+                        <div class="space-y-1 text-xs text-slate-700 dark:text-slate-300">
+                            <div class="flex items-center gap-1.5">
+                                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+                                <span><strong>Certificação Intermediária:</strong> Analista de Segurança de Redes de Computadores</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+                                <span><strong>Certificação Intermediária:</strong> Analista em Gestão e Planejamento de Redes de Segurança</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+                                <span><strong>Certificação Intermediária:</strong> Operador de Sistema de Computador</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50/60 dark:bg-slate-800/20 p-4 rounded-lg border border-slate-200/70 dark:border-slate-800">
+                        <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-0.5">
+                            Cursos & Qualificações Complementares
+                        </h3>
+                        <p class="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2.5">
+                            SENAI-SP
+                        </p>
+                        <div class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 font-bold">&bull;</span>
+                                <span><strong>Excel Avançado e Análise de Dados</strong> (40h)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-blue-600 dark:text-blue-400 font-bold">&bull;</span>
+                                <span><strong>Montagem e Manutenção de Microcomputadores</strong> (80h)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
         </div>
+
+        <!-- Rodapé -->
+        <footer class="no-print bg-slate-50 dark:bg-slate-950/80 border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400">
+            <p>Talyson Costa Marques da Silva &bull; <a href="https://sandymarques.github.io/curriculo" class="text-blue-600 dark:text-blue-400 hover:underline">sandymarques.github.io/curriculo</a></p>
+        </footer>
     </div>
 
-    <!-- Script para controle do Dark Mode e ícones Lucide -->
+    <!-- Script para controle do Dark Mode, Lucide Icons e Impressão -->
     <script>
         lucide.createIcons();
 
         const toggleBtn = document.getElementById('theme-toggle');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const printBtn = document.getElementById('print-btn');
 
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
@@ -252,6 +383,12 @@
             }
             updateIcons();
         });
+
+        if (printBtn) {
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+        }
     </script>
 </body>
 </html>
