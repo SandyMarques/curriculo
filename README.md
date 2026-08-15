@@ -9,5 +9,5 @@ Graduado em Redes de Computadores (SENAC-SP), com atuação em TI, Infraestrutur
 ## 📌 Resumo
 - **Formação:** Graduação Tecnológica em Redes de Computadores (SENAC-SP)
 - **Experiência:** Accenture Brasil (Projeto Vivere) — Analista Administrativo | Foco em Automação & Processos
-- **Principais Competências:** Linux, Redes TCP/IP, Python, APIs de IA, Docker, Excel Avançado/SLA, JavaScript/Web
+- **Principais Competências:** Linux, Redes TCP/IP, Python, APIs de IA, Docker, Excel/SLAs, JavaScript/Web
 - **Localização:** Praia Grande - SP (Disponível para Remoto / Híbrido / Presencial)
